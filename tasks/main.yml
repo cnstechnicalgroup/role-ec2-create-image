@@ -1,0 +1,14 @@
+---
+- name: Create image of target host
+  local_action: ec2_ami
+  args:
+    instance_id: "{{ hostvars[inventory_hostname].ec2_id }}"
+    name: "{{ hostvars[inventory_hostname].ec2_tag_Name }}-{{ hostvars[inventory_hostname].ansible_date_time.date }}"
+    no_reboot: yes
+    wait: yes
+    region: "{{ aws_region }}"
+    aws_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
+  register: instance
+  tags:
+    - ec2createimage
