@@ -3,7 +3,7 @@
   local_action: ec2_ami
   args:
     instance_id: "{{ hostvars[inventory_hostname].ec2_id }}"
-    name: "{{ hostvars[inventory_hostname].ec2_tag_Name }}-{{ hostvars[inventory_hostname].ansible_date_time.date }}"
+    name: "{{ hostvars[inventory_hostname].ec2_tag_Name }}-{{ lookup('pipe', 'date +%Y%m%d%H%M%S') }}"
     no_reboot: yes
     wait: yes
     region: "{{ aws_region }}"
