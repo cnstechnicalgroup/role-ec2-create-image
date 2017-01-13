@@ -1,7 +1,7 @@
 Role: cns.ec2-create-image
 ========
 
-This role creates an EC2 image.
+This role creates an AMI image for the target host.
 
 Requirements
 ------------

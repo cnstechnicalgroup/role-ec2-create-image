@@ -12,3 +12,5 @@
   register: instance
   tags:
     - ec2createimage
+
+- debug: var=instance
