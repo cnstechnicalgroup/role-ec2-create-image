@@ -7,8 +7,6 @@
     no_reboot: yes
     wait: yes
     region: "{{ aws_region }}"
-    aws_access_key: "{{ aws_access_key }}"
-    aws_secret_key: "{{ aws_secret_key }}"
   register: instance
   tags:
     - ec2createimage
